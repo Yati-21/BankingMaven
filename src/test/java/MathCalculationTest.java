@@ -1,42 +1,55 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import org.junit.jupiter.api.Test;
 
 public class MathCalculationTest {
-
+	
 	@Test
-	public void testadd()
-	{
-		MathOperation obj = new MathOperation();
-		int i = 10;
-		int j = 20;
-//		assertEquals(j,40);
-//		assertEquals(40,40);
+	public void testAdd() {
 		
-		assertEquals(obj.add(i,j),30);
-		System.out.println("Test successful");
+		int i = 2;
+		int j = 3;
+		MathOperation obj = new MathOperation();
+		assertEquals(obj.add(i, j),5);
+	}
+	
+	@Test
+	public void testMultiply() {
+		
+		int i = 2;
+		int j = 3;
+		MathOperation obj = new MathOperation();
+		assertEquals(obj.multiply(i, j),6);
+	}
+	
+	@Test
+	public void testValidateName() {
+		
+	String custname ="James";
+		MathOperation obj = new MathOperation();
+		assertTrue(obj.validateName(custname));
+	}
+
+	
+	@Test
+	public void testName() {
+		
+		String name = "not null";
+		
+		assertNotNull(name);
+		
+		
 	}
 
 	@Test
-	public void testMultipply()
-	{
-//		String name = null;
-//		assertNotNull(name);  //will fail
-//		
-//
-//		String name1 = "abc";
-//		assertNotNull(name1,"abc");  //will pass
-//	
-
+	public void testValidation() {
 		
-		MathOperation obj = new MathOperation();
-		int i = 10;
-		int j = 20;
-		assertEquals(obj.multiply(i,j),200);
+		boolean  status = true;
 		
-		System.out.println("multiply Test successful");
+		assertTrue(status);
+		
+		
 	}
-
 }

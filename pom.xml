@@ -41,11 +41,36 @@
 			<scope>test</scope>
 		</dependency>
 
-		<properties>
-			<sonar.organization>yati-21</sonar.organization>
-		</properties>
 
 	</dependencies>
 
+	<properties>
+		<sonar.organization>yati-21</sonar.organization>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
 
 </project>
